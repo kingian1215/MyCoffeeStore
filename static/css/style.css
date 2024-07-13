@@ -1,35 +1,3 @@
-/* static/css/styles.css */
-body {
-    background-color: #f8f9fa;
-}
-
-.container {
-    margin-top: 50px;
-}
-
-h1 {
-    color: #343a40;
-}
-
-img {
-    border-radius: 5px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.btn {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-}
-
-
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Noto Sans TC', sans-serif;
 }

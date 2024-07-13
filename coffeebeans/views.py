@@ -24,7 +24,7 @@ def product_list(request):
             'discounted_price': int(product.price * Decimal('0.9'))
         } for product in products
     ]
-    print(discounted_products)
+    # print(discounted_products)
 
     context = {
         'discounted_products': discounted_products,

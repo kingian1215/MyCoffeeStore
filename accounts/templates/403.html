@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禁止訪問</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .register-container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+    </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(function() {
+                    window.location.href = "{% url 'product_list' %}";
+                }, 800);  // 1秒後自動跳轉到首頁
+            });
+        </script>
+</head>
+<body>
+    <div class="container home-container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-header text-center">
+                    <h2>禁止訪問</h2>
+                </div>
+                <div class="card-body">
+                    <h1>403 - 禁止訪問</h1>
+                    <p>您沒有權限訪問此頁面。</p>
+                </div>
+                <form method="post" action="{% url 'coffeebeans:index' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-block">Home</button>
+                </form>
+                <form method="post" action="{% url 'accounts:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-block">登出</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

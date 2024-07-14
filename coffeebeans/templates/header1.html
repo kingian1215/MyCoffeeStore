@@ -41,7 +41,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">批發專用<img src="{% static 'img\Home.png' %}" width='80'></a>
         </li>
-        {% else %}
+        {% elif user.is_OrdinaryCustomer %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'coffeebeans:view_cart' %}">顯示購物車<img src="{% static 'img\checkout cart.png' %}" width='80'></a>
         </li>

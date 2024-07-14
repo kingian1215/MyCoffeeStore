@@ -153,18 +153,18 @@
                     <h5 class="card-title">{{ item.product.name }}</h5>
                     <p class="card-text">{{ item.product.introduce|truncatewords:20 }}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#productModal{{ item.product.id }}">
-                                View
-                            </button>
-                        </div>
                         {% if user.is_Wholesaler %}
                           <small class="text-muted"><s>原價: ${{ item.product.price }}</s></small><br>
                           <small class="text-muted">批發價: ${{ item.discounted_price }}</small>
                         {% else %}
                             <small class="text-muted">${{ item.product.price }}</small>
                         {% endif %}
+                        <div class="btn-group">
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#productModal{{ item.product.id }}">
+                                View
+                            </button>
+                        </div>
                     </div>
                     <!-- Quantity input and Add to cart button -->
                     <div class="input-group mt-2">
